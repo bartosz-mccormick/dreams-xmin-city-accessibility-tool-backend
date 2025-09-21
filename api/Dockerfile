@@ -8,7 +8,7 @@ ENV PGRST_DB_ANON_ROLE=anon
 # Small wrapper that:
 # - sets PGRST_SERVER_PORT from $PORT (Railway) if not provided
 # - builds PGRST_DB_URI from POSTGRES_* if not provided
-COPY --chmod=755 docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+COPY --chmod=755 docker-entrypoint.sh /usr/bin/
 
 EXPOSE 3000
 ENTRYPOINT ["docker-entrypoint.sh"]
