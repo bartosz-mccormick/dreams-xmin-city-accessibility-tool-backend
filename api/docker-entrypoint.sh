@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 set -eu
 
 # Map Railway's $PORT -> PostgREST's port if not already set
