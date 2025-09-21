@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -eu
+#!/bin/sh
+set -e
 
 # Map Railway's $PORT -> PostgREST's port if not already set
 if [ -n "${PORT:-}" ] && [ -z "${PGRST_SERVER_PORT:-}" ]; then
