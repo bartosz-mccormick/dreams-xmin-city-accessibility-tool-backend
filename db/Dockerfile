@@ -11,8 +11,8 @@ RUN set -eux; \
     rm -rf /var/lib/apt/lists/*
 
 # Init scripts (run only on first init of the data dir)
-COPY initdb/01-extensions.sql /docker-entrypoint-initdb.d/01-extensions.sql
-COPY initdb/02-bootstrap.sh     /docker-entrypoint-initdb.d/02-bootstrap.sh
+COPY init/01-extensions.sql /docker-entrypoint-initdb.d/01-extensions.sql
+COPY init/02-bootstrap.sh     /docker-entrypoint-initdb.d/02-bootstrap.sh
 RUN chmod +x /docker-entrypoint-initdb.d/02-bootstrap.sh
 
 EXPOSE 5432
