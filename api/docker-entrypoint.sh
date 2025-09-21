@@ -7,11 +7,10 @@ if [ -n "${PORT:-}" ] && [ -z "${PGRST_SERVER_PORT:-}" ]; then
 fi
 
 # Build a DB URI if not supplied directly
-# Expected vars (if you don't set PGRST_DB_URI): POSTGRES_HOST, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD
 if [ -z "${PGRST_DB_URI:-}" ] && [ -n "${POSTGRES_HOST:-}" ]; then
   PGPORT="${POSTGRES_PORT:-5432}"
   SSLMODE="${POSTGRES_SSLMODE:-prefer}"   # set to 'disable' or 'require' as needed
-  export PGRST_DB_URI="postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${PGPORT}/${POSTGRES_DB}?sslmode=${SSLMODE}"
+  export PGRST_DB_URI="postgres://authenticator:${AUTHENTICATOR_POSTGRES_PASSWORD}@${POSTGRES_HOST}:${PGPORT}/${POSTGRES_DB}?sslmode=${SSLMODE}"
 fi
 
 
