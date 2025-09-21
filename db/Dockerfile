@@ -12,7 +12,7 @@ RUN set -eux; \
 
 # Init scripts (run only on first init of the data dir)
 COPY init/01-extensions.sql /docker-entrypoint-initdb.d/01-extensions.sql
-COPY init/02-bootstrap.sh     /docker-entrypoint-initdb.d/02-bootstrap.sh
-RUN chmod +x /docker-entrypoint-initdb.d/02-bootstrap.sh
+COPY init/02-roles-schema.sh     /docker-entrypoint-initdb.d/02-roles-schema.sh
+RUN chmod +x /docker-entrypoint-initdb.d/02-roles-schema.sh
 
 EXPOSE 5432
